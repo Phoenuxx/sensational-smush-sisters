@@ -47,6 +47,10 @@ button {
     margin-bottom: 10px;
 }
 
+span {
+    text-align: right;
+}
+
 .title {
     background-color: #b094b57b;
     /* background-color: #0f7fca9c; */
@@ -64,6 +68,9 @@ button {
     color: white;
 }
 
+.health {
+    margin-left: 40px;
+}
 .chosen-hero {
     background-color: darkblue;
     height: 250px;
@@ -98,7 +105,8 @@ button {
     color: white;
 }
 
-.enemy {
+
+.current-enemy {
     background-color: darkturquoise;
     height: 250px;
     width: 250px;
@@ -111,6 +119,7 @@ button {
 .char-pic {
     margin-left: 20px;
     margin-right: auto;
+    margin-top: 5px;
 }
 
 .fight {
@@ -153,29 +162,68 @@ button {
     background-color: rgb(86, 197, 123);
 }
 
+.current-enemy-l {
+    background-color: #7ca16dad;
+    height: 250px;
+    width: 250px;
+    float: left;
+    margin: 0 25px 0 0;
+    font-size: 36px;
+    color: white;
+}
+
 #villain21 {
     background-color: rgb(104, 18, 65);
 }
 
 #villain22 {
-    background-color: rgb(104, 18, 65);
+    background-color: rgba(104, 18, 65, 0.705);
 }
 
 #villain23 {
-    background-color: rgb(104, 18, 65);
+    background-color: rgba(104, 18, 65, 0.705);
+}
+
+.current-enemy-m {
+    background-color: #d63e3ca1;
+    height: 250px;
+    width: 250px;
+    float: left;
+    margin: 0 25px 0 0;
+    font-size: 36px;
+    color: white;
 }
 
 #villain31 {
-    background-color: #faec81;
+    background-color: #faec81c9;
     color: rgb(97, 97, 97);
 }
 
 #villain32 {
-    background-color: #faec81;
+    background-color: #faec81c9;
     color: rgb(97, 97, 97);
 }
 
 #villain33 {
-    background-color: #faec81;
+    background-color: #faec81c9;
     color: rgb(97, 97, 97);
+}
+
+.current-enemy-p {
+    height: 250px;
+    width: 250px;
+    float: left;
+    margin: 0 25px 0 0;
+    font-size: 36px;
+    color: white;
+}
+
+.current-enemy-s {
+    background-color: rgba(9, 93, 94, 0.87);
+    height: 250px;
+    width: 250px;
+    float: left;
+    margin: 0 25px 0 0;
+    font-size: 36px;
+    color: white;
 }
