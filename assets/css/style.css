@@ -41,14 +41,15 @@ img {
 
 button {
     font-size:28px;
-    background-color: rgba(76, 175, 79, 0.603);
+    background-color: rgba(0, 0, 0, 0.301);
     border-color: rgba(47, 202, 52, 0.404);
     color: white;
     margin-bottom: 10px;
 }
 
 .title {
-    background-color: black;
+    background-color: #b094b57b;
+    /* background-color: #0f7fca9c; */
     color: white;
     text-align: right;
 }
@@ -73,10 +74,6 @@ button {
     color: white;
 }
 
-.your-char {
-    font-size: 48px;
-}
-
 .enemy-title {
     clear: both;
 }
@@ -92,7 +89,7 @@ button {
 }
 
 .villain {
-    background-color: darkturquoise;
+    background-color: rgba(9, 93, 94, 0.87);
     height: 250px;
     width: 250px;
     float: left;
@@ -142,4 +139,43 @@ button {
     background-color: darkorange;
     
     background-size: 200px 200px;
+}
+
+#villain11 {
+    background-color: rgb(86, 197, 123);
+}
+
+#villain12 {
+    background-color: rgb(86, 197, 123);
+}
+
+#villain13 {
+    background-color: rgb(86, 197, 123);
+}
+
+#villain21 {
+    background-color: rgb(104, 18, 65);
+}
+
+#villain22 {
+    background-color: rgb(104, 18, 65);
+}
+
+#villain23 {
+    background-color: rgb(104, 18, 65);
+}
+
+#villain31 {
+    background-color: #faec81;
+    color: rgb(97, 97, 97);
+}
+
+#villain32 {
+    background-color: #faec81;
+    color: rgb(97, 97, 97);
+}
+
+#villain33 {
+    background-color: #faec81;
+    color: rgb(97, 97, 97);
 }
