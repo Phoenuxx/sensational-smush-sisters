@@ -1,0 +1,145 @@
+body {
+    background: url("../images/start_back.jpg");
+    background-size:cover;
+}
+
+.body-zelda {
+    background: url("../images/zelda-botw.jpg");
+    background-size:cover;
+}
+
+.body-mario {
+    background: url("../images/mushroom-kingdom.jpg");
+    background-size:cover;
+}
+
+.body-pikachu {
+    background: url("../images/pallet-town.jpg");
+    background-size:cover;
+}
+
+.body-samus  {
+    background: url("../images/ridley.jpg");
+    background-size:cover;
+}
+
+
+h1 {
+    font-size: 72px;
+}
+
+h2 {
+    font-size: 48px;
+    color: white;
+}
+
+img {
+    width: 200px;
+    height:
+     200px;
+}
+
+button {
+    font-size:28px;
+    background-color: rgba(76, 175, 79, 0.603);
+    border-color: rgba(47, 202, 52, 0.404);
+    color: white;
+    margin-bottom: 10px;
+}
+
+.title {
+    background-color: black;
+    color: white;
+    text-align: right;
+}
+
+.hero {
+    background-color: darkblue;
+    height: 250px;
+    width: 250px;
+    float: left;
+    margin: 0 25px 0 0;
+    font-size: 36px;
+    color: white;
+}
+
+.chosen-hero {
+    background-color: darkblue;
+    height: 250px;
+    width: 250px;
+    float: left;
+    margin: 0 25px 0 0;
+    font-size: 36px;
+    color: white;
+}
+
+.your-char {
+    font-size: 48px;
+}
+
+.enemy-title {
+    clear: both;
+}
+
+.enemy-char {
+    background-color: darkblue;
+    height: 250px;
+    width: 250px;
+    float: left;
+    margin: 0 25px 0 0;
+    font-size: 36px;
+    color: white;
+}
+
+.villain {
+    background-color: darkturquoise;
+    height: 250px;
+    width: 250px;
+    float: left;
+    margin: 0 25px 0 0;
+    font-size: 36px;
+    color: white;
+}
+
+.enemy {
+    background-color: darkturquoise;
+    height: 250px;
+    width: 250px;
+    float: left;
+    margin: 0 25px 0 0;
+    font-size: 36px;
+    color: white;
+}
+
+.char-pic {
+    margin-left: 20px;
+    margin-right: auto;
+}
+
+.fight {
+    clear: both;
+}
+#hero1 {
+    background-color: darkcyan;
+    
+    background-size: 200px 200px;
+}
+
+
+#hero2 {
+    background-color: darkgreen;
+    
+    background-size: 200px 200px;
+}
+
+#hero3 {
+    background-color: darkred;
+    
+    background-size: 200px 200px;
+}
+
+#hero4 {
+    background-color: darkorange;
+    
+    background-size: 200px 200px;
+}
