@@ -4,8 +4,8 @@ var enemyInArena = false;
 
 var yourFighter;
 var opposingFighter;
-var yourNewHp;
-var enemyNewHp;
+var yourHp;
+var enemyHp;
 var yourAP;
 var enemyDef;
 var enemyID;
@@ -24,13 +24,10 @@ var link = {
         console.log(this.hp);
     },
 
-    attack: function() {
-
+    combat: function() {
+        opposingFighter.hp = opposingFighter.hp - this.atk
+        this.atk = this.atk + 7;
     },
-
-    defend: function() {
-
-    }
 };
 
 var mario = {
@@ -38,12 +35,16 @@ var mario = {
     atk: 6,
     def: 12,
 
-    defend: function() {
-        enemyDef = this.def;
-        
-    },
     takeDamage: function() {
-        hp = this.hp - enemyDef;
+        this.hp = this.hp - opposingFighter.def;
+        parseInt(this.hp);
+        console.log(this.hp);
+    },
+
+    combat: function() {
+        opposingFighter.hp = opposingFighter.hp - this.atk
+        parseInt(this.hp); 
+        this.atk = this.atk++;
     },
 };
 
@@ -52,6 +53,7 @@ var mario = {
 $(".fight-btn").on("click", function () {
     if( heroClicked == true && enemyClicked == true) {
     yourFighter.takeDamage();
+    yourFighter.combat();
     updateHpDisplay();
 }   
 });
@@ -62,19 +64,41 @@ var pikachu = {
     hp: 100,
     atk: 10,
     def: 20,
+
+    takeDamage: function() {
+        this.hp = this.hp - opposingFighter.def;
+        parseInt(this.hp);
+        console.log(this.hp);
+    },
+
+    combat: function() {
+        opposingFighter.hp = opposingFighter.hp - this.atk
+        this.atk = this.atk++;
+    },
 };
 
 var samus = {
     hp: 200,
     atk: 5,
     def: 9,
+
+    takeDamage: function() {
+        this.hp = this.hp - opposingFighter.def;
+        parseInt(this.hp);
+        console.log(this.hp);
+    },
+
+    combat: function() {
+        opposingFighter.hp = opposingFighter.hp - this.atk
+        this.atk = this.atk++;
+    },
 }; 
 
 
 //update the HpDisplays
 function updateHpDisplay() {
-    $("#heroHealth").text(yourFighter.hp);
-    $("#health1").text();
+    $("#hero-health").text(yourFighter.hp);
+    $("#enemy-health").text(opposingFighter.hp);
 }
 
 //Selects your character and denotes the reset as villains
@@ -112,7 +136,7 @@ function hCase1() {
     $("#hero2").attr('id', 'villain11');
     $("#hero3").attr('id', 'villain12');
     $("#hero4").attr('id', 'villain13');
-    $("#health1").attr('id', 'heroHealth');
+    $("#health1").attr('id', 'hero-health');
     yourFighter = link;
     console.log("Hero 1 clicked");
     
@@ -125,7 +149,7 @@ function hCase2() {
     $("#hero1").attr('id', 'villain21');
     $("#hero3").attr('id', 'villain22');
     $("#hero4").attr('id', 'villain23');
-    $("#health2").attr('id', 'heroHealth');
+    $("#health2").attr('id', 'hero-health');
     yourFighter = mario;
     console.log("Hero 2 clicked");
 }
@@ -137,7 +161,7 @@ function hCase3() {
     $("#hero1").attr('id', 'villain31');
     $("#hero2").attr('id', 'villain32');
     $("#hero4").attr('id', 'villain33');
-    $("#health3").attr('id', 'heroHealth');
+    $("#health3").attr('id', 'hero-health');
     yourFighter = pikachu;
     console.log("Hero 3 clicked");
 }
@@ -149,7 +173,7 @@ function hCase4() {
     $("#hero1").attr('id', 'villain41');
     $("#hero2").attr('id', 'villain42');
     $("#hero3").attr('id', 'villain43');
-    $("#health4").attr('id', 'heroHealth');
+    $("#health4").attr('id', 'hero-health');
     yourFighter = samus;
     console.log("Hero 4 clicked");
 }
@@ -194,6 +218,7 @@ $(".hero").on("click", function() {
             if (enemyInArena == false) {
                 $(this).attr("class", "current-enemy-l");
                 $(this).appendTo('#arena');
+                $("#health2").attr('id', 'enemy-health');
                 opposingFighter = mario;
                 enemyInArena = true;
                 console.log("Link vs Mario");
@@ -204,6 +229,7 @@ $(".hero").on("click", function() {
 				if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-l");
                     $(this).appendTo('#arena');
+                    $("#health3").attr('id', 'enemy-health');
                     opposingFighter = pikachu;
                     enemyInArena = true;
                     console.log("Link vs Pikachu");
@@ -214,6 +240,7 @@ $(".hero").on("click", function() {
 				if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-l");
                     $(this).appendTo('#arena');
+                    $("#health4").attr('id', 'enemy-health');
                     opposingFighter = samus;
                     enemyInArena = true;
                     console.log("Link vs Samus");
@@ -224,6 +251,7 @@ $(".hero").on("click", function() {
 				if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-m");
                     $(this).appendTo('#arena');
+                    $("#health1").attr('id', 'enemy-health');
                     opposingFighter = link;
                     enemyInArena = true;
                     console.log("Mario vs Link");
@@ -234,6 +262,7 @@ $(".hero").on("click", function() {
 				if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-m");
                     $(this).appendTo('#arena');
+                    $("#health3").attr('id', 'enemy-health');
                     opposingFighter = pikachu;
                     enemyInArena = true;
                     console.log("Mario vs Pikachu");
@@ -244,6 +273,7 @@ $(".hero").on("click", function() {
 				if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-m");
                     $(this).appendTo('#arena');
+                    $("#health4").attr('id', 'enemy-health');
                     opposingFighter = samus;
                     enemyInArena = true;
                     console.log("Mario vs Samus");
@@ -254,6 +284,7 @@ $(".hero").on("click", function() {
 				if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-p");
                     $(this).appendTo('#arena');
+                    $("#health1").attr('id', 'enemy-health');
                     opposingFighter = link;
                     enemyInArena = true;
                     console.log("Pikachu vs Link");
@@ -264,6 +295,7 @@ $(".hero").on("click", function() {
 				if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-p");
                     $(this).appendTo('#arena');
+                    $("#health2").attr('id', 'enemy-health');
                     opposingFighter = mario;
                     enemyInArena = true;
                     console.log("Pikachu vs Mario");
@@ -274,6 +306,7 @@ $(".hero").on("click", function() {
 				if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-p");
                     $(this).appendTo('#arena');
+                    $("#health4").attr('id', 'enemy-health');
                     opposingFighter = samus;
                     enemyInArena = true;
                     console.log("Pikachu vs Samus");
@@ -284,6 +317,7 @@ $(".hero").on("click", function() {
 				if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-s");
                     $(this).appendTo('#arena');
+                    $("#health1").attr('id', 'enemy-health');
                     opposingFighter = link;
                     enemyInArena = true;
                     console.log("Samus vs Link");
@@ -294,6 +328,7 @@ $(".hero").on("click", function() {
 				if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-s");
                     $(this).appendTo('#arena');
+                    $("#health2").attr('id', 'enemy-health');
                     opposingFighter = mario;
                     enemyInArena = true;
                     console.log("Samus vs Mario");
@@ -304,6 +339,7 @@ $(".hero").on("click", function() {
 				if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-s");
                     $(this).appendTo('#arena');
+                    $("#health3").attr('id', 'enemy-health');
                     opposingFighter = pikachu;
                     enemyInArena = true;
                     console.log("Samus vs Pikachu");
