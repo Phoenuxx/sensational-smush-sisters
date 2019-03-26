@@ -2,6 +2,7 @@ var heroClicked = false;
 var enemyClicked = false;
 var enemyInArena = false;
 var enemyIsLiving = true;
+var enemyBeaten = false;
 
 var enemiesLeft = 3;
 
@@ -11,13 +12,10 @@ var yourHp;
 var enemyHp;
 var enemyID;
 
-
 var link = {
     hp: 150,
     atk: 7,
     def:15,
-
-    
 
     takeDamage: function() {
         this.hp = this.hp - opposingFighter.def;
@@ -30,7 +28,6 @@ var link = {
         this.atk = this.atk + 7;
     },
 };
-
 var mario = {
     hp: 180,
     atk: 6,
@@ -48,7 +45,6 @@ var mario = {
         this.atk = this.atk + 6;
     },
 };
-
 var pikachu = {
     hp: 100,
     atk: 10,
@@ -65,7 +61,6 @@ var pikachu = {
         this.atk = this.atk + 10;
     },
 };
-
 var samus = {
     hp: 200,
     atk: 5,
@@ -101,7 +96,7 @@ function updateHpDisplay() {
 
 //Determine when an enemy is defeated
 function enemyDefeat() {
-    if (enemyClicked == true && opposingFighter.hp < 0) {
+    if (enemyClicked == true && opposingFighter.hp < 1) {
         console.log("enemy defeated");
         $(".current-enemy-l").remove();
         $(".current-enemy-m").remove();
@@ -109,15 +104,14 @@ function enemyDefeat() {
         $(".current-enemy-s").remove();
         enemiesLeft--;
         opposingFighter = "";
+        enemyInArena = false;
         enemyClicked = false;
-    }
-    enemySelect();
-    moveEnemyToArena();
+        enemyBeaten = true;
+    };
+    newEnemy();
 }
 
-//pick a new enemy
-
-//Selects your character and denotes the reset as villains
+//Selects your character and denotes the rest as villains
 $(".hero").on("click", function() {
     if (heroClicked == false) {
         $(this).attr("class", "chosen-hero");
@@ -129,8 +123,6 @@ $(".hero").on("click", function() {
     }
 });
 
-
-
 //Select enemy from villains
 function enemySelect() {
     $(".villain").on("click", function() {
@@ -140,6 +132,15 @@ function enemySelect() {
         };
     });
 }
+
+//pick a new enemy
+function newEnemy() {
+    $(".villain").on("click", function() {
+        enemySelect();
+        moveEnemyToArena(); 
+    })
+}
+
 
 function hCase1() {
     $("body").attr("class", "body-zelda");
