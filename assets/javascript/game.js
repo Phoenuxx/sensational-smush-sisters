@@ -84,6 +84,8 @@ $(".fight-btn").on("click", function () {
     yourFighter.takeDamage();
     yourFighter.combat();
     updateHpDisplay();
+    playerWins();
+    playerLost();
 }   
 });
 
@@ -92,6 +94,25 @@ function updateHpDisplay() {
     $("#hero-health").text(yourFighter.hp);
     $("#enemy-health").text(opposingFighter.hp);
     enemyDefeat();
+}
+
+//Victory function
+function playerWins() {
+    if(enemiesLeft < 1) {
+        $("body").attr("class", "body-win");
+        $(".title").html("<h1>YOU WON!</h1>");
+        if (yourFighter.hp < 0) {
+            $("#hero-health").text("0");
+        }
+    }
+}
+
+//Defeat function
+function playerLost() {
+    if (enemiesLeft > 0 && yourFighter.hp < 1) {
+        $("body").attr("class", "body-lose");
+        $(".title").html("<h1>YOU LOSE...</h1>");
+    }
 }
 
 //Determine when an enemy is defeated
@@ -137,11 +158,12 @@ function enemySelect() {
 function newEnemy() {
     $(".villain").on("click", function() {
         enemySelect();
-        moveEnemyToArena(); 
+        moveEnemyToArena();
+        
     })
 }
 
-
+// Changes based on which Hero is chosen
 function hCase1() {
     $("body").attr("class", "body-zelda");
     $(".title").css("background-color","#7ca16dad");

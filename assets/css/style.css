@@ -23,7 +23,16 @@ body {
     background-size:cover;
 }
 
+.body-win {
+    background: url("../images/victory.jpg");
+    background-size:cover;
+}
 
+.body-lose {
+    background: url("../images/game-over.jpg");
+    background-size:cover;
+    
+}
 
 h1 {
     font-size: 72px;
@@ -42,7 +51,7 @@ img {
 
 button {
     font-size:28px;
-    background-color: rgba(0, 0, 0, 0.301);
+    background-color: rgba(0, 0, 0, 0.753);
     border-color: rgba(47, 202, 52, 0.404);
     color: white;
     margin-bottom: 10px;
@@ -174,7 +183,7 @@ span {
 }
 
 #villain21 {
-    background-color: rgb(104, 18, 65);
+    background-color: rgb(104, 18, 65, .705);
 }
 
 #villain22 {
