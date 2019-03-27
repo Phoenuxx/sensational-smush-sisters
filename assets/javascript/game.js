@@ -47,7 +47,7 @@ var mario = {
 };
 var pikachu = {
     hp: 100,
-    atk: 10,
+    atk: 12,
     def: 20,
 
     takeDamage: function() {
@@ -102,9 +102,12 @@ function playerWins() {
         $("body").attr("class", "body-win");
         $(".title").html("<h1>YOU WON!</h1>");
         if (yourFighter.hp < 0) {
-            $("#hero-health").text("0");
+            $("#hero-health").text("~1");
         }
     }
+    $(".chosen-hero").on("click", function() {
+        
+    })
 }
 
 //Defeat function
@@ -179,6 +182,7 @@ function hCase1() {
 
 function hCase2() {
     $("body").attr("class", "body-mario");
+    $("#your-char").attr("id", "your-char-mario")
     $(".title").css("background-color","#d63e3ca1");
     $(".title").html("<h1>Super Peach Bros</h1>");
     $("#hero1").attr('id', 'villain21');

@@ -1,36 +1,37 @@
 body {
     background: url("../images/start_back.jpg");
-    background-size:cover;
+    background-size: cover;
+
 }
 
 .body-zelda {
     background: url("../images/zelda-botw.jpg");
-    background-size:cover;
+    background-size: cover;
 }
 
 .body-mario {
     background: url("../images/mushroom-kingdom.jpg");
-    background-size:cover;
+    background-size: cover;
 }
 
 .body-pikachu {
     background: url("../images/pallet-town.jpg");
-    background-size:cover;
+    background-size: cover;
 }
 
 .body-samus  {
     background: url("../images/ridley.jpg");
-    background-size:cover;
+    background-size: cover;
 }
 
 .body-win {
     background: url("../images/victory.jpg");
-    background-size:cover;
+    background-size: auto;
 }
 
 .body-lose {
     background: url("../images/game-over.jpg");
-    background-size:cover;
+    background-size: cover;
     
 }
 
@@ -61,11 +62,23 @@ span {
     text-align: right;
 }
 
+.container {
+    margin-left: 15px;
+}
+
 .title {
     background-color: #b094b57b;
-    /* background-color: #0f7fca9c; */
     color: white;
     text-align: right;
+    font-family: 'Germania One', cursive;
+}
+
+#your-char-mario {
+    background-color: #d63e3ca1;
+    color: white;
+    width: 225px;
+    margin: 10px 0 10px 0;
+    padding-left: 5px;
 }
 
 .hero {
@@ -136,40 +149,39 @@ span {
     clear: both;
 }
 #hero1 {
-    background-color: darkcyan;
+    background-color: rgba(0, 139, 139, 0.658);
     
     background-size: 200px 200px;
 }
 
-
 #hero2 {
-    background-color: darkgreen;
+    background-color: rgba(0, 100, 0, 0.63);
     
     background-size: 200px 200px;
 }
 
 #hero3 {
-    background-color: darkred;
+    background-color: rgba(139, 0, 0, 0.555);
     
     background-size: 200px 200px;
 }
 
 #hero4 {
-    background-color: darkorange;
+    background-color: rgba(255, 140, 0, 0.555);
     
     background-size: 200px 200px;
 }
 
 #villain11 {
-    background-color: rgb(86, 197, 123);
+    background-color: rgba(86, 197, 123, 0.616);
 }
 
 #villain12 {
-    background-color: rgb(86, 197, 123);
+    background-color: rgba(86, 197, 123, 0.616);
 }
 
 #villain13 {
-    background-color: rgb(86, 197, 123);
+    background-color: rgba(86, 197, 123, 0.616);
 }
 
 .current-enemy-l {
@@ -237,3 +249,4 @@ span {
     font-size: 36px;
     color: white;
 }
+
