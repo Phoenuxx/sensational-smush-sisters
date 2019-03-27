@@ -3,7 +3,6 @@ var enemyClicked = false;
 var enemyInArena = false;
 var enemyIsLiving = true;
 var enemyBeaten = false;
-
 var enemiesLeft = 3;
 
 var yourFighter;
@@ -41,7 +40,7 @@ var mario = {
 
     combat: function() {
         opposingFighter.hp = opposingFighter.hp - this.atk
-        parseInt(this.hp); 
+        parseInt(this.hp);
         this.atk = this.atk + 6;
     },
 };
@@ -76,7 +75,7 @@ var samus = {
         opposingFighter.hp = opposingFighter.hp - this.atk
         this.atk = this.atk + 5;
     },
-}; 
+};
 
 //What happens when you click the fight button
 $(".fight-btn").on("click", function () {
@@ -86,7 +85,7 @@ $(".fight-btn").on("click", function () {
     updateHpDisplay();
     playerWins();
     playerLost();
-}   
+}
 });
 
 //update the HpDisplays
@@ -106,7 +105,8 @@ function playerWins() {
         }
     }
     $(".chosen-hero").on("click", function() {
-        
+        $("body").attr("class", "easter-egg");
+        $(".title").html("<h1>In case you hadn't figured out the parody yet-</h1>");
     })
 }
 
@@ -142,7 +142,7 @@ $(".hero").on("click", function() {
         $(".hero").attr("class", "villain");
         $(".villain").appendTo("#enemy-select");
         $("#your-char").text("Your Hero-");
-        
+
         heroClicked = true;
     }
 });
@@ -162,7 +162,7 @@ function newEnemy() {
     $(".villain").on("click", function() {
         enemySelect();
         moveEnemyToArena();
-        
+
     })
 }
 
@@ -177,7 +177,7 @@ function hCase1() {
     $("#health1").attr('id', 'hero-health');
     yourFighter = link;
     console.log("Hero 1 clicked");
-    
+
 }
 
 function hCase2() {
@@ -203,6 +203,10 @@ function hCase3() {
     $("#health3").attr('id', 'hero-health');
     yourFighter = pikachu;
     console.log("Hero 3 clicked");
+    // //pika-pika
+    $("#duel").html("<h2>PIKA PIKA PIKACHUUUUU</h2>");
+    $("#your-char").html("<h2>Pikachu!</h2>");
+    $(".fight-btn").text('PIKA!');
 }
 
 function hCase4() {
@@ -224,10 +228,10 @@ $(".hero").on("click", function() {
     switch(idName){
         case 'hero1':
             enemySelect();
-            hCase1();    
+            hCase1();
             moveEnemyToArena();
         break;
-        
+
         case 'hero2':
             enemySelect();
             hCase2();
@@ -239,13 +243,13 @@ $(".hero").on("click", function() {
             hCase3();
             moveEnemyToArena();
         break;
-        
+
         case 'hero4':
             enemySelect();
             hCase4();
             moveEnemyToArena();
         break;
-        
+
     }
  });
 
@@ -261,7 +265,7 @@ $(".hero").on("click", function() {
                     opposingFighter = mario;
                     enemyInArena = true;
                     console.log("Link vs Mario");
-                }		    
+                }
             break;
 
             case 'villain12':
@@ -274,7 +278,7 @@ $(".hero").on("click", function() {
                     console.log("Link vs Pikachu");
                 }
             break;
-            
+
             case 'villain13':
                 if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-l");
@@ -285,7 +289,7 @@ $(".hero").on("click", function() {
                     console.log("Link vs Samus");
                 }
             break;
-            
+
             case 'villain21':
                 if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-m");
@@ -296,7 +300,7 @@ $(".hero").on("click", function() {
                     console.log("Mario vs Link");
                 }
             break;
-            
+
             case 'villain22':
                 if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-m");
@@ -307,7 +311,7 @@ $(".hero").on("click", function() {
                     console.log("Mario vs Pikachu");
                 }
             break;
-            
+
             case 'villain23':
                 if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-m");
@@ -328,8 +332,8 @@ $(".hero").on("click", function() {
                     enemyInArena = true;
                     console.log("Pikachu vs Link");
                 }
-            break;	
-            
+            break;
+
             case 'villain32':
                 if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-p");
@@ -339,8 +343,8 @@ $(".hero").on("click", function() {
                     enemyInArena = true;
                     console.log("Pikachu vs Mario");
                 }
-            break;	
-            
+            break;
+
             case 'villain33':
                 if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-p");
@@ -351,7 +355,7 @@ $(".hero").on("click", function() {
                     console.log("Pikachu vs Samus");
                 }
             break;
-            
+
             case 'villain41':
                 if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-s");
@@ -362,7 +366,7 @@ $(".hero").on("click", function() {
                     console.log("Samus vs Link");
                 }
             break;
-            
+
             case 'villain42':
                 if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-s");
@@ -373,7 +377,7 @@ $(".hero").on("click", function() {
                     console.log("Samus vs Mario");
                 }
             break;
-            
+
             case 'villain43':
                 if (enemyInArena == false) {
                     $(this).attr("class", "current-enemy-s");
@@ -387,3 +391,8 @@ $(".hero").on("click", function() {
         }
     })
 }
+
+
+// BUG REPORT 
+// Player can continue playing even after loss and trigger win condition**
+//enemy-title and enemy-select classes ruining my pika-pika fun...
